@@ -30,8 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             TapBounceContainer(
               onTap: () {
+                Navigator.pushNamed(context, "users");
                 showTopSnackBar(
-                  animationDuration: Duration(seconds: 1),
+                  displayDuration: Duration(milliseconds: 500 ),
+                  animationDuration: Duration(milliseconds: 900),
 
                   Overlay.of(context),
                   const CustomSnackBar.success(
@@ -41,20 +43,24 @@ class _HomeScreenState extends State<HomeScreen> {
                         'Welcome Bro,\n You open User Database',
                   ),
                 );
-                Navigator.pushNamed(context, "users");
+
               },
               child: HomeOptions("Users"),
             ),
             TapBounceContainer(
               onTap: () {
+                Navigator.pushNamed(context, "posts");
+
                 showTopSnackBar(
+                  displayDuration: Duration(milliseconds: 500),
+                  animationDuration: Duration(milliseconds: 900),
                   Overlay.of(context),
-                  const CustomSnackBar.info(
+                  const CustomSnackBar.error(
                     message:
                         'Welcome Bro,\n You open Posts Database',
                   ),
                 );
-                Navigator.pushNamed(context, "posts");
+
               },
               child: HomeOptions("Posts"),
             ),
