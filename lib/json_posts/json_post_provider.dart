@@ -9,8 +9,8 @@ class PostJsonProvider extends ChangeNotifier
 
   Future<void> getjsondata()
   async {
-    String jsondata = await rootBundle.loadString("assets/json/posts.json");
-    jsonlist = jsonDecode(jsondata);
+    String postsdata = await rootBundle.loadString("assets/json/posts.json");
+    jsonlist = jsonDecode(postsdata);
     notifyListeners();
 
     print(jsonlist);

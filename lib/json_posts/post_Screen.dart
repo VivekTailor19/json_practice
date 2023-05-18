@@ -28,57 +28,70 @@ class _Posts_ScreenState extends State<Posts_Screen> {
 
     return SafeArea(
       child: Scaffold(backgroundColor: Colors.indigo.shade100,
-        appBar: AppBar(backgroundColor: Colors.indigo.shade100,
-          title: Text("User Datas"),centerTitle: true,
+          appBar: AppBar(backgroundColor: Colors.indigo.shade100,
+              leading: IconButton(onPressed: () => Navigator.pop(context),
+              icon: Icon(Icons.arrow_back,size: 25,color: Colors.indigo.shade700,)),
+          title: Text(
+            "Posts Datas", style: TextStyle(color: Colors.indigo.shade700),),
+          centerTitle: true,
           elevation: 0
-        ),
-        body: ListView.builder(
+      ),
+      body: Scrollbar(
+        radius: Radius.circular(5),
+        trackVisibility: true,
+        thickness: 10,
+        interactive: true,
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2),
           itemCount: postT!.jsonlist.length,
           itemBuilder: (context, index) {
             return PostTab(
-              userid: postT!.jsonlist[index]["userId"],
-              id: postT!.jsonlist[index]["id"],
-              title: postT!.jsonlist[index]["title"],
-              body: postT!.jsonlist[index]["body"]
+                userid: postT!.jsonlist[index]["userId"],
+                id: postT!.jsonlist[index]["id"],
+                title: postT!.jsonlist[index]["title"],
+                body: postT!.jsonlist[index]["body"]
             );
           },
         ),
       ),
-    );
+    ),);
   }
 
-  Widget PostTab({int? userid, int? id, String? title, String? body})
-  {
+  Widget PostTab({int? userid, int? id, String? title, String? body}) {
     return Container(
-      margin: EdgeInsets.all(5),
+      margin: EdgeInsets.all(8),
       height: 130,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
-        boxShadow: [BoxShadow(color: Colors.indigo.shade700,blurRadius: 3)],
+        boxShadow: [BoxShadow(color: Colors.indigo.shade700, blurRadius: 3)],
+
       ),
       alignment: Alignment.center,
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("ID: $id"),
-                  Text("UserId: $userid"),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("ID: $id"),
+                Text("UserId: $userid"),
               ],),
-            ),
-            Text("Title: $title",style: TextStyle(fontWeight: FontWeight.bold,overflow: TextOverflow.ellipsis,fontSize: 15),),
-            Text("$body",style: TextStyle(fontSize: 15,overflow: TextOverflow.ellipsis),),
+            SizedBox(height: 2),
+            Text("Title: $title", style: TextStyle(fontWeight: FontWeight.bold,
+                overflow: TextOverflow.ellipsis,
+                fontSize: 15),),
+            SizedBox(height: 8),
+            Text("$body", style: TextStyle(
+              fontSize: 14, overflow: TextOverflow.ellipsis,), maxLines: 6),
           ],
         ),
       ),
 
     );
-
   }
 
 }

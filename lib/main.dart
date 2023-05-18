@@ -4,19 +4,22 @@ import 'package:provider/provider.dart';
 
 import 'json_posts/json_post_provider.dart';
 import 'json_posts/post_Screen.dart';
+import 'json_users/json_user_provider.dart';
+import 'json_users/user_Screen.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => PostJsonProvider(),)
+        ChangeNotifierProvider(create: (context) => PostJsonProvider(),),
+        ChangeNotifierProvider(create: (context) => UserJsonProvider(),),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
           "/":(context) => HomeScreen(),
           "posts":(context) => Posts_Screen(),
-
+          "users":(context) => Users_Screen(),
 
         },
       ),
