@@ -43,7 +43,7 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
                   SizedBox(width: 5),
                   Text("${cpT!.cartlist[index].date}"),
                   Spacer(),
-                  Text("product"),
+                  Text("${cpT!.cartlist[index].productlist![0].productId}"),
 
                 ],
               ),

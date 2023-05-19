@@ -2,19 +2,31 @@ class CartModel
 {
   int? id,userId,v;
   String? date;
-  List? products;
+  List<ProductModel>? productlist;
 
-  CartModel({this.id, this.userId, this.v, this.date,this.products});
+  CartModel({this.id, this.userId, this.v, this.date,this.productlist});
 
   factory CartModel.fromJson(Map mp)
   {
-    return CartModel(v: mp['__v'],id:mp['id'] ,date:mp['date'] ,userId:mp['userId'] );
+    var list = mp['products'] as List;
+    List<ProductModel> items = list.map((e) => ProductModel.fromJson(e)).toList();
+
+    return CartModel(v: mp['__v'],id:mp['id'] ,date:mp['date'] ,userId:mp['userId'],productlist: items );
   }
 
-  void productfilter()
-  {
-
-  }
+  // factory Data.fromJson(Map<String, dynamic> parsedJson){
+  //
+  //   var list = parsedJson['images'] as List;
+  //   List<Image> images = list.map((i) => Image.fromJson(i)).toList();
+  //
+  //
+  //   return Data(
+  //       id: parsedJson['id'],
+  //       firstName: parsedJson['first_name'],
+  //       imagesList: images
+  //
+  //   );
+  // }
 
 
 }
