@@ -69,11 +69,12 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
 
                       Text("Total Product => ${cpT!.cartlist[index].productlist!.length}"),
 
-                      Column(
-                        children: [
-                          //for ( var i in text ) Text(i.toString())
-                        ],
-                      )
+                      Expanded(child: ListView.builder(
+                        itemCount: cpT!.cartlist[index].productlist[index].,
+                        itemBuilder: (context, index) {
+
+                      },
+                      ))
 
                     ],
                   ),

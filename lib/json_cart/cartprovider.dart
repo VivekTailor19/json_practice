@@ -18,6 +18,8 @@ class CartProvider extends ChangeNotifier
     notifyListeners();
   }
 
+
+
   List<Color> colors = [
     Colors.amber,
     Colors.green,
