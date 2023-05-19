@@ -60,9 +60,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         'Welcome Bro,\n You open Posts Database',
                   ),
                 );
-
               },
               child: HomeOptions("Posts"),
+            ),
+            TapBounceContainer(
+              onTap: () {
+                Navigator.pushNamed(context, "people");
+                showTopSnackBar(
+                  displayDuration: Duration(milliseconds: 500 ),
+                  animationDuration: Duration(milliseconds: 900),
+
+                  Overlay.of(context),
+                  const CustomSnackBar.success(
+                    backgroundColor: Colors.indigo,
+                    textStyle: TextStyle(color: Colors.white),
+                    message:
+                    'Welcome Bro,\n You open People Database',
+                  ),
+                );
+              },
+              child: HomeOptions("People"),
             ),
 
           ],
