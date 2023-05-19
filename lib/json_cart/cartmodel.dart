@@ -8,15 +8,16 @@ class CartModel
 
   factory CartModel.fromJson(Map mp)
   {
-    var list = mp['products'] as List;
+    List list = mp['products'] ;
+
     List<ProductModel> items = list.map((e) => ProductModel.fromJson(e)).toList();
 
-    return CartModel(v: mp['__v'],id:mp['id'] ,date:mp['date'] ,userId:mp['userId'],productlist: items );
+    return CartModel(v: mp['__v'],id:mp['id'] ,date:mp['date'] ,userId:mp['userId'],
+        productlist: items );
   }
 
-
-
 }
+
 
 class ProductModel
 {
@@ -28,9 +29,6 @@ class ProductModel
   }
 }
 
-
-// List<ProductModel> productlist = [];
-//
 
 
 
