@@ -81,6 +81,22 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: HomeOptions("People"),
             ),
+            TapBounceContainer(
+              onTap: () {
+                Navigator.pushNamed(context, "cart");
+
+                showTopSnackBar(
+                  displayDuration: Duration(milliseconds: 500),
+                  animationDuration: Duration(milliseconds: 900),
+                  Overlay.of(context),
+                  const CustomSnackBar.error(
+                    message:
+                    'Welcome Bro,\n You open Cart Database',
+                  ),
+                );
+              },
+              child: HomeOptions("Cart"),
+            ),
 
           ],
         ),
