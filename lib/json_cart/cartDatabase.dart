@@ -31,6 +31,9 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
         appBar: AppBar(
           backgroundColor: Colors.teal,
           title: Text("Cart DataBase"),
+          leading: IconButton(icon: Icon(Icons.add),onPressed: () {
+            print("${cpT!.cartlist[0].productlist!.length}");
+          },),
         ),
         body: ListView.builder(
           itemCount: cpT!.cartlist.length,
@@ -43,7 +46,7 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
                   SizedBox(width: 5),
                   Text("${cpT!.cartlist[index].date}"),
                   Spacer(),
-                  Text("${cpT!.cartlist[index].productlist![0].productId}"),
+                  Text("${cpT!.cartlist[index].productlist!.length}"),
 
                 ],
               ),
