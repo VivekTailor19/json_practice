@@ -12,9 +12,12 @@ class CartModel
     List list = mp['products'] ;
 
     List<ProductModel> items = list.map((e) => ProductModel.fromJson(e)).toList();
+    print(list);
 
     return CartModel(v: mp['__v'],id:mp['id'] ,date:mp['date'] ,userId:mp['userId'],
         productlist: items );
+
+
   }
 
 }

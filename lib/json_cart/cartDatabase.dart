@@ -38,17 +38,46 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
         body: ListView.builder(
           itemCount: cpT!.cartlist.length,
           itemBuilder: (context, index) {
+            cpT!.generateRandomColor();
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Text("${cpT!.cartlist[index].id}"),
-                  SizedBox(width: 5),
-                  Text("${cpT!.cartlist[index].date}"),
-                  Spacer(),
-                  Text("${cpT!.cartlist[index].productlist!.length}"),
+              child: Container(
+                margin: EdgeInsets.all(10),
+                alignment: Alignment.center,
+                height: 150,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),color: cpT!.colors[cpT!.z],),
 
-                ],
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+
+                      Text("Date: ${cpT!.cartlist[index].date}"),
+
+                      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Id : ${cpT!.cartlist[index].id}"),
+                          Text("UserId : ${cpT!.cartlist[index].userId}"),
+                        ],
+                      ),
+
+                      Text("V_code : ${cpT!.cartlist[index].v}"),
+
+                      SizedBox(width: 5),
+
+                      Text("Total Product => ${cpT!.cartlist[index].productlist!.length}"),
+
+                      Column(
+                        children: [
+                          //for ( var i in text ) Text(i.toString())
+                        ],
+                      )
+
+                    ],
+                  ),
+                ),
               ),
             );
           },
@@ -56,4 +85,6 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
       ),
     );
   }
+
+
 }

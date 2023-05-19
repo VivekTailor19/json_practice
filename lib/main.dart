@@ -22,7 +22,7 @@ void main() {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "posts",
+        //initialRoute: "posts",
         routes: {
           "/":(context) => HomeScreen(),
           "posts":(context) => Posts_Screen(),

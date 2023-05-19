@@ -14,6 +14,7 @@ class PeopleProvider extends ChangeNotifier
     List peopledata = jsonDecode(json);
     peoples = peopledata.map((e) => PeopleModel.fromJson(e)).toList();
     notifyListeners();
-
   }
+
+
 }
