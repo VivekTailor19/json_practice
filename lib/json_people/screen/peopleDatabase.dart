@@ -29,7 +29,7 @@ class _People_DataBaseState extends State<People_DataBase> {
     peopleF = Provider.of<PeopleProvider>(context,listen: false);
 
     return SafeArea(
-      child: Scaffold(backgroundColor: Colors.teal,
+      child: Scaffold(
         appBar: AppBar(backgroundColor: Colors.teal,
         title: Text("Peoples",style: TextStyle(color: Colors.white),),),
 
@@ -39,16 +39,19 @@ class _People_DataBaseState extends State<People_DataBase> {
 
           itemBuilder: (context, index) {
 
-            return Row(
-              children: [
-                Text("${peopleT!.peoples[index].id}",style: TextStyle(color: Colors.white),),
-                SizedBox(width: 25),
-                Text("${peopleT!.peoples[index].nameModel!.firstname}"),
-                SizedBox(width: 4),
-                Text("${peopleT!.peoples[index].nameModel!.lastname}"),
-                Spacer(),
-                Text(" ${peopleT!.peoples[index].addressModel!.geoLocate!.long}"),
-              ],
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Text("${peopleT!.peoples[index].id}",),
+                  SizedBox(width: 25),
+                  Text("${peopleT!.peoples[index].nameModel!.firstname}"),
+                  SizedBox(width: 4),
+                  Text("${peopleT!.peoples[index].nameModel!.lastname}"),
+                  Spacer(),
+                  Text(" ${peopleT!.peoples[index].addressModel!.geoLocate!.long}"),
+                ],
+              ),
             );
 
 
