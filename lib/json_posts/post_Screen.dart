@@ -42,15 +42,19 @@ class _Posts_ScreenState extends State<Posts_Screen> {
         thickness: 10,
         interactive: true,
         child: GridView.builder(
+
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2),
           itemCount: postT!.jsonlist.length,
           itemBuilder: (context, index) {
+            postT!.generateRandomColor();
             return PostTab(
                 userid: postT!.jsonlist[index]["userId"],
                 id: postT!.jsonlist[index]["id"],
                 title: postT!.jsonlist[index]["title"],
-                body: postT!.jsonlist[index]["body"]
+                body: postT!.jsonlist[index]["body"],
+
+                c: postT!.colors[postT!.z],
             );
           },
         ),
@@ -58,13 +62,13 @@ class _Posts_ScreenState extends State<Posts_Screen> {
     ),);
   }
 
-  Widget PostTab({int? userid, int? id, String? title, String? body}) {
+  Widget PostTab({int? userid, int? id, String? title, String? body,Color? c}) {
     return Container(
       margin: EdgeInsets.all(8),
       height: 130,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: c,
         borderRadius: BorderRadius.circular(15),
         boxShadow: [BoxShadow(color: Colors.indigo.shade700, blurRadius: 3)],
 
