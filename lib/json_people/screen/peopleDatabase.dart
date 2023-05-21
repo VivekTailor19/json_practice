@@ -39,6 +39,7 @@ class _People_DataBaseState extends State<People_DataBase> {
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           padding: EdgeInsets.only(right: 15,top: 10),
           itemBuilder: (context, index) {
+            peopleT!.generateimage();
             return GestureDetector(
               onTap: () => Navigator.pushNamed(context, "person",arguments: index),
               child: Padding(
@@ -52,7 +53,7 @@ class _People_DataBaseState extends State<People_DataBase> {
                       Container(height: 110,width: 110,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(image: AssetImage("assets/images/bhuro.jpg"),fit: BoxFit.fill)
+                          image: DecorationImage(image: AssetImage("${peopleT!.images[peopleT!.imageindex]}"),fit: BoxFit.fill)
                         ),),
 
                       Text("@ ${peopleT!.peoples[index].username}",style: TextStyle(color: Colors.indigo,fontSize: 20),)
