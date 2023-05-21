@@ -17,6 +17,7 @@ class PeopleProvider extends ChangeNotifier
     notifyListeners();
   }
 
+
   List<String> images = [
     "assets/images/person (1).png",
     "assets/images/person (2).png",
