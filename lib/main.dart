@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'json_cart/cartDatabase.dart';
 import 'json_cart/cartprovider.dart';
 import 'json_people/provider/peopleprovider.dart';
+import 'json_people/screen/person_view.dart';
 import 'json_posts/json_post_provider.dart';
 import 'json_posts/post_Screen.dart';
 import 'json_users/json_user_provider.dart';
@@ -28,7 +29,8 @@ void main() {
           "posts":(context) => Posts_Screen(),
           "users":(context) => Users_Screen(),
           "people":(context) => People_DataBase(),
-          "cart":(context) => Cart_DataBase()
+          "person":(context) => Person_View(),
+          "cart":(context) => Cart_DataBase(),
 
         },
       ),

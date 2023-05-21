@@ -9,6 +9,7 @@ import 'cartmodel.dart';
 
 class CartProvider extends ChangeNotifier
 {
+  int cartindex = 0;
   List<CartModel> cartlist = [];
   Future<void> fromJson()
   async {
@@ -18,7 +19,10 @@ class CartProvider extends ChangeNotifier
     notifyListeners();
   }
 
-
+ void findcartindex(int index)
+  {
+    cartindex = index;
+  }
 
   List<Color> colors = [
     Colors.amber,
@@ -37,7 +41,6 @@ class CartProvider extends ChangeNotifier
     Colors.blue,
     Colors.lime,
     Colors.white54,
-    Colors.black,
     Colors.black12,
     Colors.lightBlue,
     Colors.amberAccent,
@@ -61,7 +64,5 @@ class CartProvider extends ChangeNotifier
     Random r = Random();
     z = r.nextInt(colors.length);
   }
-
-
 
 }

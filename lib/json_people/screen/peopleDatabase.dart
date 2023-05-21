@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,10 +11,9 @@ class People_DataBase extends StatefulWidget {
 }
 
 class _People_DataBaseState extends State<People_DataBase> {
-
   @override
   void initState() {
-    Provider.of<PeopleProvider>(context,listen: false).fromJson();
+    Provider.of<PeopleProvider>(context, listen: false).fromJson();
     super.initState();
   }
 
@@ -24,16 +22,55 @@ class _People_DataBaseState extends State<People_DataBase> {
 
   @override
   Widget build(BuildContext context) {
-
     peopleT = Provider.of<PeopleProvider>(context);
-    peopleF = Provider.of<PeopleProvider>(context,listen: false);
+    peopleF = Provider.of<PeopleProvider>(context, listen: false);
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.teal,
-        title: Text("Peoples",style: TextStyle(color: Colors.white),),),
+        appBar: AppBar(
+          backgroundColor: Colors.teal,
+          title: Text(
+            "Peoples",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: GridView.builder(
+          itemCount: peopleT!.peoples.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          padding: EdgeInsets.only(right: 15,top: 10),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () => Navigator.pushNamed(context, "person",arguments: index),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15,bottom: 10),
+                child: Container(
+                  height: 140,width: 140,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                  child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
 
-        body:ListView.builder(
+                      Container(height: 110,width: 110,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(image: AssetImage("assets/images/bhuro.jpg"),fit: BoxFit.fill)
+                        ),),
+
+                      Text("@ ${peopleT!.peoples[index].username}",style: TextStyle(color: Colors.indigo,fontSize: 20),)
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+/*
+
+ListView.builder(
           itemCount: peopleT!.peoples.length,
           scrollDirection: Axis.vertical,
 
@@ -57,7 +94,4 @@ class _People_DataBaseState extends State<People_DataBase> {
 
 
         },),
-      ),
-    );
-  }
-}
+*/
