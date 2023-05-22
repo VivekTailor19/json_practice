@@ -30,6 +30,7 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
         appBar: AppBar(
           backgroundColor: Colors.teal,
           title: Text("Cart DataBase"),
+          centerTitle: true,
           // leading: IconButton(
           //   icon: Icon(Icons.add),
           //   onPressed: () {
@@ -47,7 +48,7 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
               child: Container(
                 margin: EdgeInsets.all(10),
                 alignment: Alignment.center,
-                height: 150,
+                height: 160,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: cpT!.colors[cpT!.z],
@@ -70,22 +71,35 @@ class _Cart_DataBaseState extends State<Cart_DataBase> {
                       SizedBox(width: 5),
                       Text(
                           "Total Product => ${cpT!.cartlist[index].productlist!.length}"),
-                      Expanded(
-                          child: ListView.builder(
-                            scrollDirection: Axis.vertical,
-                        itemCount: cpT!.cartlist[cpT!.cartindex].productlist!.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 4),
+                      // Expanded(
+                      //     child: ListView.builder(
+                      //       scrollDirection: Axis.vertical,
+                      //       itemCount: cpT!.cartlist[cpT!.cartindex].productlist!.length,
+                      //       itemBuilder: (context, index) {
+                      //         return Padding(
+                      //           padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 4),
+                      //           child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //             children: [
+                      //               Text("Product ID : ${cpT!.cartlist[cpT!.cartindex].productlist![index].productId}",style: TextStyle(fontSize: 15),),
+                      //               Text("Quantity : ${cpT!.cartlist[cpT!.cartindex].productlist![index].quantity}",style: TextStyle(fontSize: 15),),
+                      //         ],
+                      //       ),
+                      //     );
+                      //   },
+                      // )),
+
+                      Column(children: cpT!.cartlist[index].productlist!.map((e) =>
+                          Padding(
+                            padding:  EdgeInsets.symmetric(horizontal: 30,vertical: 4),
                             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("Product ID : ${cpT!.cartlist[cpT!.cartindex].productlist![index].productId}",style: TextStyle(fontSize: 15),),
-                                Text("Quantity : ${cpT!.cartlist[cpT!.cartindex].productlist![index].quantity}",style: TextStyle(fontSize: 15),),
+                                Text("Product ID : ${e.productId}",style: TextStyle(fontSize: 15),),
+                                Text("Quantity : ${e.quantity}",style: TextStyle(fontSize: 15),),
                               ],
                             ),
-                          );
-                        },
-                      ))
+                          )
+                      ).toList())
+
                     ],
                   ),
                 ),
