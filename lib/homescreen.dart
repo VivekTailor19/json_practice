@@ -97,6 +97,22 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: HomeOptions("Cart"),
             ),
+            TapBounceContainer(
+              onTap: () {
+                Navigator.pushNamed(context, "products");
+
+                showTopSnackBar(
+                  displayDuration: Duration(milliseconds: 500),
+                  animationDuration: Duration(milliseconds: 900),
+                  Overlay.of(context),
+                  const CustomSnackBar.info(
+                    message:
+                    'Welcome Bro,\n You open Product DashBoard',
+                  ),
+                );
+              },
+              child: HomeOptions("Products"),
+            ),
 
           ],
         ),
