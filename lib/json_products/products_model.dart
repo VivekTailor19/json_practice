@@ -39,3 +39,15 @@ class ItemProductModel
     return ItemProductModel(id:mp['id'], title: mp['title'], price: mp['price'],brand: mp['brand'],category: mp['category'],description: mp['description'],discount: mp['discount'],rating: mp['rating'],stock: mp['stock'],thumbnail: mp['thumbnail'],);
   }
 }
+
+// class ImagesModel
+// {
+//   String? path;
+//   ImagesModel({this.path});
+//
+//   factory ImagesModel.fromJson(List list)
+//   {
+//     return ImagesModel(path: );
+//
+//   }
+//}

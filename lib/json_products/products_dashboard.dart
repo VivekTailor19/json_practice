@@ -14,6 +14,11 @@ class _Products_DashBoardState extends State<Products_DashBoard> {
 
   ProductsProvider? productT;
   ProductsProvider? productF;
+  @override
+  void initState() {
+    Provider.of<ProductsProvider>(context,listen: false).json_to_use();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,9 @@ class _Products_DashBoardState extends State<Products_DashBoard> {
         body: Center(
           child: Column(
             children: [
-              Text("Single : ${productF!.prodctslist.length}"),
+
+
+              Text("Total : ${productF!.productsModel!.items?[0].price}"),
               //Text("First : ${productT!.prodctslist[0]!.}"),
             ],
           ),
