@@ -3,7 +3,9 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:json_practice/json_people/model/peoplemodel.dart';
+
+import '../model/peoplemodel.dart';
+
 
 class PeopleProvider extends ChangeNotifier
 {

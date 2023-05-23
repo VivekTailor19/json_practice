@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:json_practice/json_products/products_model.dart';
+import 'package:json_practice/json/json_products/products_model.dart';
 
 class ProductsProvider extends ChangeNotifier
 {
-  Map products = {};
+
   ProductsModel? productsModel;
   Future<void> json_to_use()
   async {
@@ -15,7 +15,7 @@ class ProductsProvider extends ChangeNotifier
     // print("Json");
     // print(json);
 
-    products = jsonDecode(json);
+    var products = jsonDecode(json);
     //
     // print("\n\nProducts");
     // print(products);

@@ -2,20 +2,22 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:json_practice/homescreen.dart';
-import 'package:json_practice/json_people/screen/peopleDatabase.dart';
-import 'package:json_practice/json_products/products_dashboard.dart';
+
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import 'json_cart/cartDatabase.dart';
-import 'json_cart/cartprovider.dart';
-import 'json_people/provider/peopleprovider.dart';
-import 'json_people/screen/person_view.dart';
-import 'json_posts/json_post_provider.dart';
-import 'json_posts/post_Screen.dart';
-import 'json_products/products_provider.dart';
-import 'json_users/json_user_provider.dart';
-import 'json_users/user_Screen.dart';
+import 'json/json_cart/cartDatabase.dart';
+import 'json/json_cart/cartprovider.dart';
+import 'json/json_people/provider/peopleprovider.dart';
+import 'json/json_people/screen/peopleDatabase.dart';
+import 'json/json_people/screen/person_view.dart';
+import 'json/json_posts/json_post_provider.dart';
+import 'json/json_posts/post_Screen.dart';
+import 'json/json_products/products_dashboard.dart';
+import 'json/json_products/products_provider.dart';
+import 'json/json_users/json_user_provider.dart';
+import 'json/json_users/user_Screen.dart';
+
 
 void main() {
   runApp(

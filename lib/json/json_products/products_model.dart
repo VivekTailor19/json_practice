@@ -7,11 +7,12 @@ class ProductsModel
 
   factory ProductsModel.fromJson(Map mp)
   {
+    List l1 =mp['products'];
     return ProductsModel(
         skip: mp['skip'],
         limit: mp['limit'],
         total: mp['total'],
-        items: mp['products'].map((e)=>ItemProductModel.fromJson(e)).toList()
+        items: l1.map((e)=>ItemProductModel.fromJson(e)).toList(),
     );
   }
 }
@@ -19,7 +20,7 @@ class ProductsModel
 class ItemProductModel
 {
   int? id,price,stock;
-  double? rating,discount;
+  num? rating,discount;
   String? title,description,brand,category,thumbnail;
 
   ItemProductModel(

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:json_practice/json_products/products_provider.dart';
+import 'package:json_practice/json/json_products/products_provider.dart';
+
 import 'package:provider/provider.dart';
 
 class Products_DashBoard extends StatefulWidget {
@@ -16,8 +17,9 @@ class _Products_DashBoardState extends State<Products_DashBoard> {
   ProductsProvider? productF;
   @override
   void initState() {
-    Provider.of<ProductsProvider>(context,listen: false).json_to_use();
     super.initState();
+    Provider.of<ProductsProvider>(context,listen: false).json_to_use();
+
   }
 
   @override
@@ -38,7 +40,7 @@ class _Products_DashBoardState extends State<Products_DashBoard> {
           child: Column(
             children: [
 
-              Text("Total : ${productF!.productsModel!.total}"),
+              Text(productT!.productsModel!=null?"Category : ${productT!.productsModel!.items[0].category}":"00"),
               //Text("First : ${productT!.prodctslist[0]!.}"),
             ],
           ),
