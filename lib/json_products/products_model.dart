@@ -1,9 +1,9 @@
 class ProductsModel
 {
   int? total,skip,limit;
-  List<ItemProductModel>? items ;
+  List<ItemProductModel> items = [] ;
 
-  ProductsModel({this.total, this.skip, this.limit, this.items});
+  ProductsModel({this.total, this.skip, this.limit, required this.items});
 
   factory ProductsModel.fromJson(Map mp)
   {
@@ -11,7 +11,7 @@ class ProductsModel
         skip: mp['skip'],
         limit: mp['limit'],
         total: mp['total'],
-        items:mp['products'].map((e)=>ItemProductModel.fromJson(e)).toList()
+        items: mp['products'].map((e)=>ItemProductModel.fromJson(e)).toList()
     );
   }
 }

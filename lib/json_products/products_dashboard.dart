@@ -38,8 +38,7 @@ class _Products_DashBoardState extends State<Products_DashBoard> {
           child: Column(
             children: [
 
-
-              Text("Total : ${productF!.productsModel!.items?[0].price}"),
+              Text("Total : ${productF!.productsModel!.total}"),
               //Text("First : ${productT!.prodctslist[0]!.}"),
             ],
           ),
