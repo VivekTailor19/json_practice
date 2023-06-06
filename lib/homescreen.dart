@@ -114,6 +114,13 @@ class _HomeScreenState extends State<HomeScreen> {
               child: HomeOptions("Products"),
             ),
 
+            GestureDetector(onTap: () => Navigator.pushNamed(context, "airline"),child: HomeOptions("Airline")),
+            GestureDetector(onTap: () => Navigator.pushNamed(context, "country"),child: HomeOptions("Countries")),
+            GestureDetector(onTap: () => Navigator.pushNamed(context, "post"),child: Container(width:300,child: Expanded(child: HomeOptions("Post Add Data in Json")))),
+            GestureDetector(onTap: () => Navigator.pushNamed(context, "d_product"),child: HomeOptions("D_Products")),
+            GestureDetector(onTap: () => Navigator.pushNamed(context, "shop"),child: HomeOptions("Shopping")),
+
+
           ],
         ),
       ),
@@ -123,8 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget HomeOptions(String optname) {
     return Container(
-      height: 60,
-      width: 200,
+      height: 30,
+      width: 120,
       alignment: Alignment.center,
       child: Text(
         "$optname",
@@ -137,4 +144,5 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
     );
   }
+
 }
