@@ -1,29 +1,29 @@
-class ProductsModel
+class P_model
 {
   int? total,skip,limit;
-  List<ItemProductModel> items = [] ;
+  List<ItemP_model> items = [] ;
 
-  ProductsModel({this.total, this.skip, this.limit, required this.items});
+  P_model({this.total, this.skip, this.limit, required this.items});
 
-  factory ProductsModel.fromJson(Map mp)
+  factory P_model.fromJson(Map mp)
   {
     List l1 =mp['products'];
-    return ProductsModel(
+    return P_model(
         skip: mp['skip'],
         limit: mp['limit'],
         total: mp['total'],
-        items: l1.map((e)=>ItemProductModel.fromJson(e)).toList(),
+        items: l1.map((e)=>ItemP_model.fromJson(e)).toList(),
     );
   }
 }
 
-class ItemProductModel
+class ItemP_model
 {
   int? id,price,stock;
   num? rating,discount;
   String? title,description,brand,category,thumbnail;
 
-  ItemProductModel(
+  ItemP_model(
       {this.id,
       this.price,
       this.stock,
@@ -35,9 +35,9 @@ class ItemProductModel
       this.category,
       this.thumbnail});
 
-  factory ItemProductModel.fromJson(Map mp)
+  factory ItemP_model.fromJson(Map mp)
   {
-    return ItemProductModel(id:mp['id'], title: mp['title'], price: mp['price'],brand: mp['brand'],category: mp['category'],description: mp['description'],discount: mp['discount'],rating: mp['rating'],stock: mp['stock'],thumbnail: mp['thumbnail'],);
+    return ItemP_model(id:mp['id'], title: mp['title'], price: mp['price'],brand: mp['brand'],category: mp['category'],description: mp['description'],discount: mp['discount'],rating: mp['rating'],stock: mp['stock'],thumbnail: mp['thumbnail'],);
   }
 }
 

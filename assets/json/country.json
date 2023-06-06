@@ -1,0 +1,95 @@
+{
+  "name": {
+    "common": "India",
+    "official": "Republic of India"
+
+  },     ####
+
+  "cca2": "IN",  ~~~
+
+  "independent": true,  ~~~
+
+
+  "currencies": {
+    "INR": {
+      "name": "Indian rupee",
+      "symbol": "₹"
+    }
+  },  $$$ Future
+
+  "idd": {
+    "root": "+9",
+    "suffixes": [
+      "1"
+    ]
+  },    ####
+
+  "capital": [
+    "New Delhi"
+  ],  ~~~
+
+  "altSpellings": [
+    "IN",
+    "Bhārat",
+    "Republic of India",
+    "Bharat Ganrajya",
+    "இந்தியா"
+  ],  ~~~
+
+  "region": "Asia",  ~~~
+
+  "subregion": "Southern Asia",  ~~~
+
+
+  "latlng": [
+    20.0,
+    77.0
+  ],  ~~~
+
+  "landlocked": false,  ~~~
+
+  "borders": [
+    "BGD",
+    "BTN",
+    "MMR",
+    "CHN",
+    "NPL",
+    "PAK"
+  ],  ~~~
+
+  "area": 3287590.0,  ~~~
+
+  "flag": "🇮🇳",
+  "maps": {
+    "googleMaps": "https://goo.gl/maps/WSk3fLwG4vtPQetp7",
+    "openStreetMaps": "https://www.openstreetmap.org/relation/304716"
+  },  ~~~
+
+  "population": 1380004385,  ~~~
+
+
+  "timezones": [
+    "UTC+05:30"
+  ],  ~~~
+
+  "continents": [
+    "Asia"
+  ],  ~~~,
+
+
+  "flags": {
+    "png": "https://flagcdn.com/w320/in.png",
+    "svg": "https://flagcdn.com/in.svg",
+    "alt": "The flag of India is composed of three equal horizontal bands of saffron, white and green. A navy blue wheel with twenty-four spokes — the Ashoka Chakra — is centered in the white band."
+  },  ~~~
+
+  "coatOfArms": {
+    "png": "https://mainfacts.com/media/images/coats_of_arms/in.png",
+    "svg": "https://mainfacts.com/media/images/coats_of_arms/in.svg"
+  },  ~~~
+
+  "startOfWeek": "monday",  ~~~
+
+}
+
+
